@@ -11,22 +11,24 @@ import jakarta.persistence.Table;
 @Table(name = "materia")
 public class Materia {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id")
+  private Integer id;
 
-  @Column
+  @Column(name = "nome")
   private String nome;
 
-  @Column
+  @Column(name = "carga_horaria")
   private int cargaHoraria;
 
   public Materia() {
   }
 
-  public Materia(String nome, int cargaHoraria) {
+  public Materia(String nome, int cargaHoraria, Integer id) {
     this.nome = nome;
     this.cargaHoraria = cargaHoraria;
+    this.id = id;
   }
 
   public Integer getId() {
